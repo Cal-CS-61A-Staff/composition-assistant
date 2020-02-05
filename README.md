@@ -25,7 +25,7 @@ Types of comments available to you can be found in template.py
 - finalizing.py: Final comments and composition score.
 - ok: OK binary file
 - ok_interface.py: Interfaces with OK (Pulls submissions and sends comments and grades).
-- raw_queue.txt: List of submissions to grade for composition. Write links in the form `https://okpy.org/admin/composition/[SUBMISSION CODE]?diff=full` where [SUBMISSION CODE] is a 6 digit ID assigned by OKpy to every submission.
+- raw_queue.txt: List of submissions to grade for composition. Copy the HTML source of the OKPy `grading queue` into this file and the submissions will be automatically extracted.
 - requirements.txt: Python dependencies file. Used to run pip install.
 - secrets.py: OK access token
 - templates.py: List of possible comments.

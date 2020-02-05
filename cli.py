@@ -258,5 +258,7 @@ def grade_problem(name, problem):
 
 
 if __name__ == "__main__":
-    main()
-    print(f"{Style.RESET_ALL}")
+    try:
+        main()
+    except:
+        print(f"{Style.RESET_ALL}")
