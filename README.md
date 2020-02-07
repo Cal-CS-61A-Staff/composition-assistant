@@ -16,16 +16,18 @@ A video (silent) tutorial can be found here: https://drive.google.com/file/d/1yJ
 Types of comments available to you can be found in template.py
 
 ## File Description
-- Pipfile: Python dependencies file
-- README.md: This document!
-- analyzer.py: Main part of the analyzer program
-- auth.py: OK authentication.
-- cli.py: Command Line Interface. Run this program.
-- completed: List of submission IDs that have been graded.
-- finalizing.py: Final comments and composition score.
-- ok: OK binary file
-- ok_interface.py: Interfaces with OK (Pulls submissions and sends comments and grades).
-- raw_queue.txt: List of submissions to grade for composition. Copy the HTML source of the OKPy `grading queue` into this file and the submissions will be automatically extracted.
-- requirements.txt: Python dependencies file. Used to run pip install.
-- secrets.py: OK access token
-- templates.py: List of possible comments.
+- **Pipfile**: Python dependencies file
+- **README.md**: This document!
+- **analyzer.py\***: Main part of the analyzer program
+- **auth.py**: OK authentication.
+- **cli.py**: Command Line Interface. Run this program.
+- **completed**: List of submission IDs that have been graded.
+- **finalizing.py**: Final comments and composition score.
+- **ok**: OK binary file
+- **ok_interface.py\***: Interfaces with OK (Pulls submissions and sends comments and grades).
+- **raw_queue.txt**: List of submissions to grade for composition. Copy the HTML source of the OKPy `grading queue` into this file and the submissions will be automatically extracted.
+- **requirements.txt**: Python dependencies file. Used to run pip install.
+- **secrets.py**: OK access token
+- **templates.py\***: List of possible comments.
+
+\* These files need to be modified for each project.
