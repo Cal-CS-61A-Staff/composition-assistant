@@ -47,13 +47,13 @@ def get_backup_code(id):
     out = None
     for message in messages:
         #TODO: Change references to <proj>.py when the project changes
-        if "hog.py" in message["contents"]:
+        if "cats.py" in message["contents"]:
             if out is not None:
-                raise Exception("Multiple hog.py found???")
-            out = message["contents"]["hog.py"]
+                raise Exception("Multiple cats.py found???")
+            out = message["contents"]["cats.py"]
 
     if out is None:
-        raise Exception("No hog.py found!!!")
+        raise Exception("No cats.py found!!!")
 
     return out
 
@@ -69,7 +69,7 @@ def submit_comment(id, line, message):
 
     params = {"access_token": ACCESS_TOKEN}
     #TODO: Change reference to <proj>.py when the project changes
-    data = {"filename": "hog.py", "line": line, "message": message}
+    data = {"filename": "cats.py", "line": line, "message": message}
     r = requests.post(
         f"https://okpy.org/api/v3/backups/{id}/comment/", params=params, data=data
     )

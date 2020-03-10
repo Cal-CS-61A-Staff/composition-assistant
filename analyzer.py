@@ -23,8 +23,14 @@ PROBLEMS = {
 }
 
 # PROBLEMS = {
+#    "roll_dice": ["def roll_dice", "def free_bacon"],
+#    "play": ["def play", "#######################"],
+#    "max_scoring_num_rolls": ["def max_scoring_num_rolls", "def winner"],
+# }
+
+# PROBLEMS = {
 #     "accuracy": ["def accuracy", "def wpm"],
-#     "autocorrect": ["def autocorrect", "def swap_diff"],
+#     "autocorrect": ["def autocorrect", "def sphinx_swap"],
 # }
 
 

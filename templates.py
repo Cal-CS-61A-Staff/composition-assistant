@@ -124,6 +124,8 @@ cats_templates = {
   "autocorrect": {
     "extra-index-variable": "Consider iterating through `valid_words` directly, rather than introducing an extra "
                               "index variable that is not necessary",
+    "check-in-list": "A more concise way of checking if a element is contained within a list is to use the `in` operator "
+                          "for example, `if elem in lst:` ",
     "redundant-diff-func-call": "Since these calls to `diff_function` use the same parameters, we should store the output "
                               "in a variable to avoid redundant function calls.",
     "good-min-key": "Nice use of the min function with a key! This makes the code not only efficient, but easy to read "
@@ -274,7 +276,7 @@ while place is not hive:
 templates["custom"] = None
 
 #TODO: update **<proj>_templates to match project
-templates_by_problem = {"common": templates, **hog_templates}
+templates_by_problem = {"common": templates, **cats_templates}
 
 templates = {
     key: template

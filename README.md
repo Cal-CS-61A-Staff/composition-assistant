@@ -7,7 +7,7 @@
 3. Run the command line interface: `python3 cli.py`
 
 ## Video Tutorial
-A video (silent) tutorial can be found here: https://drive.google.com/file/d/1yJVNBHJ-S0ZRXTVJ8Smw6NZtpPW0VOm6/view
+A video tutorial can be found here: https://drive.google.com/file/d/1SVdlsFNiM5JLQt3EnX7opfdJ77gzldV5/view?usp=sharing
 
 ## Using the command line interface
 1. Sign in with Okpy account
