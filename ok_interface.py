@@ -14,7 +14,7 @@ def get_backup_ids(file="raw_queue.txt", completed_file="completed"):
 
     Keyword arguments:
     file -- the file path to the list of submission URLs (default "raw_queue.txt")
-        This file can just contain the HTML source code of the grading queue on OKpy. 
+        This file can just contain the HTML source code of the grading queue on OKpy.
         The links will be automatically extracted and the file updated.
     completed_file -- the file path to the list of completed submission IDs (default "completed")
     """

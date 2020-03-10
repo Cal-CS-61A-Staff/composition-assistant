@@ -4,16 +4,34 @@ from stringcase import snakecase
 
 #TODO: update PROBLEMS declaration to match project
 
+PROBLEMS = {
+    "hog":{
+        "roll_dice": ["def roll_dice", "def free_bacon"],
+        "play": ["def play", "#######################"],
+        "max_scoring_num_rolls": ["def max_scoring_num_rolls", "def winner"]},
+    "typing":{
+        "accuracy": ["def accuracy", "def wpm"],
+        "autocorrect": ["def autocorrect", "def swap_diff"]
+        },
+    "ants":{
+        "Short and LongThrowers": ["class ShortThrower", "class FireAnt"],
+        "ThrowerAnt": ["class ThrowerAnt", "def throw_at"],
+        "FireAnt": ["class FireAnt", "class HungryAnt"],
+        "BodyguardAnt - Ant": ["class BodyguardAnt", "class TankAnt"],
+        "BodyguardAnt - Place": ["def add_insect", "def remove_insect"],
+    }
+}
+
 # PROBLEMS = {
 #    "roll_dice": ["def roll_dice", "def free_bacon"],
 #    "play": ["def play", "#######################"],
 #    "max_scoring_num_rolls": ["def max_scoring_num_rolls", "def winner"],
 # }
 
-PROBLEMS = {
-    "accuracy": ["def accuracy", "def wpm"],
-    "autocorrect": ["def autocorrect", "def sphinx_swap"],
-}
+# PROBLEMS = {
+#     "accuracy": ["def accuracy", "def wpm"],
+#     "autocorrect": ["def autocorrect", "def sphinx_swap"],
+# }
 
 
 # PROBLEMS = {
@@ -61,34 +79,37 @@ CHECKERS: List[Type[Checker]] = []
 TARGETED_CHECKERS: Dict[str, List[Type[Checker]]] = {}
 
 
-def get_problems(code: str):
+def get_problems(code,problem_name="hog"):
     out = {}
-    for name, (start, end) in PROBLEMS.items():
+    for name, (start, end) in PROBLEMS[problem_name].items():
         start_index = code.index(start)
         end_index = code.index(end)
         initial_line_number = code[:start_index].count("\n") + 1
         func_code = code[start_index:end_index].strip()
 
-        comments = []
-
-        tree = ast.parse(func_code)
-        for checker in CHECKERS + TARGETED_CHECKERS.get(name, []):
-            checker = checker(func_code)
-            checker.visit(tree)
-            for comment in checker.comments():
-                comments.append(
-                    Comment(
-                        comment.line_num + initial_line_number - 1,
-                        comment.comment,
-                        comment.fields,
-                    )
-                )
+        comments=check_problem(func_code,name)
 
         comments.sort(key=lambda x: x.line_num)
 
         out[name] = Problem(func_code, initial_line_number, comments)
     return out
 
+def check_problem(func_code,name,initial_line_number=0):
+    comments = []
+
+    tree = ast.parse(func_code)
+    for checker in CHECKERS + TARGETED_CHECKERS.get(name, []):
+        checker = checker(func_code)
+        checker.visit(tree)
+        for comment in checker.comments():
+            comments.append(
+                Comment(
+                    comment.line_num + initial_line_number - 1,
+                    comment.comment,
+                    comment.fields,
+                )
+            )
+    return comments
 
 # @checker
 class VariableNotNeededChecker(Checker):
