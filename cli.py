@@ -1,3 +1,12 @@
+import argparse
+
+parser = argparse.ArgumentParser(description='Enter project endpoint')
+parser.add_argument("proj", help="Run 'python3 cli.py <proj>', where <proj> is one of the following: hog cats ants scheme")
+args = parser.parse_args()
+
+with open('proj.txt', 'w') as f:
+    f.write(args.proj)
+
 import os
 import re
 import sys

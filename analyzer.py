@@ -3,20 +3,22 @@ from typing import Dict, List, Generator, Type, NamedTuple
 from stringcase import snakecase
 
 #TODO: update PROBLEMS declaration to match project
+with open("proj.txt", "r+") as f: 
+    # Reading form a file 
+    proj=f.read()
 
-# PROBLEMS = {
-#    "roll_dice": ["def roll_dice", "def free_bacon"],
-#    "play": ["def play", "#######################"],
-#    "max_scoring_num_rolls": ["def max_scoring_num_rolls", "def winner"],
-# }
+hog = {
+   "roll_dice": ["def roll_dice", "def free_bacon"],
+   "play": ["def play", "#######################"],
+   "max_scoring_num_rolls": ["def max_scoring_num_rolls", "def winner"],
+}
 
-# PROBLEMS = {
-#     "accuracy": ["def accuracy", "def wpm"],
-#     "autocorrect": ["def autocorrect", "def sphinx_swap"],
-# }
+cats = {
+    "accuracy": ["def accuracy", "def wpm"],
+    "autocorrect": ["def autocorrect", "def sphinx_swap"],
+}
 
-
-PROBLEMS = {
+ants = {
     "Short and LongThrowers": ["class ShortThrower", "class FireAnt"],
     "ThrowerAnt": ["class ThrowerAnt", "def throw_at"],
     "FireAnt": ["class FireAnt", "class HungryAnt"],
@@ -24,6 +26,13 @@ PROBLEMS = {
     "BodyguardAnt - Place": ["def add_insect", "def remove_insect"],
 }
 
+PROBLEM = {
+  "ants": ants,
+  "cats":cats,
+  "hog":hog
+}
+
+PROBLEMS = PROBLEM[proj]
 
 class Comment(NamedTuple):
     line_num: int
