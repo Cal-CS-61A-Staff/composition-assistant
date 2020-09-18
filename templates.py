@@ -1,9 +1,7 @@
 # fmt: off
 # noinspection PyDictCreation
-
-with open("proj.txt", "r+") as f: 
-    # Reading form a file 
-    proj=f.read()
+import config
+proj = config.proj
 
 templates = {
     "noeffect": "This statement has no effect. You should remove it, since it has no effect on your program.",

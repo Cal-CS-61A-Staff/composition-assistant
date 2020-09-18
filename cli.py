@@ -1,12 +1,5 @@
 import argparse
-
-parser = argparse.ArgumentParser(description='Enter project endpoint')
-parser.add_argument("proj", help="Run 'python3 cli.py <proj>', where <proj> is one of the following: hog cats ants scheme")
-args = parser.parse_args()
-
-with open('proj.txt', 'w') as f:
-    f.write(args.proj)
-
+import config
 import os
 import re
 import sys
@@ -136,6 +129,8 @@ def receive_command():
 
 
 def main():
+
+    
     readline.parse_and_bind("tab: complete")
     readline.set_completer_delims("")
     print("cli.py main")
@@ -268,6 +263,10 @@ def grade_problem(name, problem):
 
 if __name__ == "__main__":
     try:
+        parser = argparse.ArgumentParser(description='Enter project endpoint')
+        parser.add_argument("proj", help="Run 'python3 cli.py <proj>', where <proj> is one of the following: hog cats ants scheme")
+        args = parser.parse_args()
+        config.proj = args.proj
         main()
     except:
         print(f"{Style.RESET_ALL}")

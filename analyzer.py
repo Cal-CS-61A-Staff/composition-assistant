@@ -1,11 +1,9 @@
 import ast
 from typing import Dict, List, Generator, Type, NamedTuple
 from stringcase import snakecase
+import config
 
-#TODO: update PROBLEMS declaration to match project
-with open("proj.txt", "r+") as f: 
-    # Reading form a file 
-    proj=f.read()
+proj=config.proj
 
 hog = {
    "roll_dice": ["def roll_dice", "def free_bacon"],
