@@ -8,7 +8,7 @@ import auth
 ACCESS_TOKEN = auth.OAuthSession().auth()
 
 import config
-proj=config.proj+".py"
+proj = config.proj+".py"
 
 def get_backup_ids(file="raw_queue.txt", completed_file="completed"):
     """Return list of ungraded submission ids.

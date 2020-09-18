@@ -1,5 +1,3 @@
-import argparse
-import config
 import os
 import re
 import sys
@@ -19,6 +17,13 @@ from colorama import Fore, Style
 
 from templates import template_completer, templates
 
+import argparse
+import config
+
+parser = argparse.ArgumentParser(description='Enter project endpoint')
+parser.add_argument("proj", help="Run 'python3 cli.py <proj>', where <proj> is one of the following: hog cats ants scheme")
+args = parser.parse_args()
+config.proj = args.proj
 
 class Grade(NamedTuple):
     score: int
@@ -263,10 +268,7 @@ def grade_problem(name, problem):
 
 if __name__ == "__main__":
     try:
-        parser = argparse.ArgumentParser(description='Enter project endpoint')
-        parser.add_argument("proj", help="Run 'python3 cli.py <proj>', where <proj> is one of the following: hog cats ants scheme")
-        args = parser.parse_args()
-        config.proj = args.proj
+
         main()
     except:
         print(f"{Style.RESET_ALL}")

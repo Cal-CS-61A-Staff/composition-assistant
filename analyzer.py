@@ -1,9 +1,9 @@
 import ast
 from typing import Dict, List, Generator, Type, NamedTuple
 from stringcase import snakecase
-import config
 
-proj=config.proj
+import config
+proj = config.proj
 
 hog = {
    "roll_dice": ["def roll_dice", "def free_bacon"],
