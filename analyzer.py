@@ -2,8 +2,6 @@ import ast
 from typing import Dict, List, Generator, Type, NamedTuple
 from stringcase import snakecase
 
-import config
-proj = config.proj
 
 hog = {
    "roll_dice": ["def roll_dice", "def free_bacon"],
@@ -30,7 +28,8 @@ PROBLEM = {
   "hog":hog
 }
 
-PROBLEMS = PROBLEM[proj]
+
+
 
 class Comment(NamedTuple):
     line_num: int
@@ -68,8 +67,9 @@ CHECKERS: List[Type[Checker]] = []
 TARGETED_CHECKERS: Dict[str, List[Type[Checker]]] = {}
 
 
-def get_problems(code: str):
+def get_problems(code: str, proj):
     out = {}
+    PROBLEMS = PROBLEM[proj]
     for name, (start, end) in PROBLEMS.items():
         start_index = code.index(start)
         end_index = code.index(end)

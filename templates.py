@@ -1,7 +1,6 @@
 # fmt: off
 # noinspection PyDictCreation
-import config
-proj = config.proj
+from cli import proj 
 
 templates = {
     "noeffect": "This statement has no effect. You should remove it, since it has no effect on your program.",

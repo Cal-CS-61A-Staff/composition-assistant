@@ -7,8 +7,7 @@ import auth
 
 ACCESS_TOKEN = auth.OAuthSession().auth()
 
-import config
-proj = config.proj+".py"
+
 
 def get_backup_ids(file="raw_queue.txt", completed_file="completed"):
     """Return list of ungraded submission ids.
@@ -94,3 +93,6 @@ def submit_grade(id, score, message, completed="completed"):
     webbrowser.open(f"https://okpy.org/admin/composition/{id}")
     with open(completed, "a") as f:
         f.write(id + "\n")
+
+from cli import proj 
+proj = proj + ".py"
