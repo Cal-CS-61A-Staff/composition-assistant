@@ -4,7 +4,7 @@
 1. Clone the repository: `git clone https://github.com/Cal-CS-61A-Staff/composition-assistant.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Update raw_queue.txt with the submissions you are assigned.
-3. Run the command line interface: `python3 cli.py <proj>` , where <proj> is one of the following: hog cats ants scheme
+3. Run the command line interface: `python3 cli.py <proj>` , where `<proj>` is one of the following: hog cats ants scheme
 
 ## Video Tutorial
 A video tutorial can be found here: https://drive.google.com/file/d/1SVdlsFNiM5JLQt3EnX7opfdJ77gzldV5/view?usp=sharing
