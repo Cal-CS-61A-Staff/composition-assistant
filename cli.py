@@ -143,7 +143,7 @@ def main():
     for id in get_backup_ids():
         try:
             code = get_backup_code(id)
-            problems = get_problems(code,proj)
+            problems = get_problems(code)
         except Exception:
             print(
                 f"{Fore.RED}An exception occurred while processing backup id #{id}",

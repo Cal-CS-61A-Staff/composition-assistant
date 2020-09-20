@@ -67,7 +67,8 @@ CHECKERS: List[Type[Checker]] = []
 TARGETED_CHECKERS: Dict[str, List[Type[Checker]]] = {}
 
 
-def get_problems(code: str, proj):
+def get_problems(code: str):
+    from cli import proj
     out = {}
     PROBLEMS = PROBLEM[proj]
     for name, (start, end) in PROBLEMS.items():
@@ -95,6 +96,7 @@ def get_problems(code: str, proj):
 
         out[name] = Problem(func_code, initial_line_number, comments)
     return out
+
 
 
 # @checker
