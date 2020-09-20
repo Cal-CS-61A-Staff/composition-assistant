@@ -1,5 +1,8 @@
 # fmt: off
 # noinspection PyDictCreation
+import config
+proj = config.proj
+
 templates = {
     "noeffect": "This statement has no effect. You should remove it, since it has no effect on your program.",
     "commented-code": "You should remove commented-out code from your final product.",
@@ -276,7 +279,14 @@ while place is not hive:
 templates["custom"] = None
 
 #TODO: update **<proj>_templates to match project
-templates_by_problem = {"common": templates, **ants_templates}
+temp = {
+  "ants": ants_templates,
+  "cats":cats_templates,
+  "type":typing_test_templates,
+  "hog":hog_templates
+}
+
+templates_by_problem = {"common": templates, **temp[proj]}
 
 templates = {
     key: template
