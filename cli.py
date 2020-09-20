@@ -25,7 +25,6 @@ from colorama import Fore, Style
 from templates import template_completer, templates
 
 
-
 class Grade(NamedTuple):
     score: int
     message: str
@@ -135,8 +134,6 @@ def receive_command():
 
 
 def main():
-
-    
     readline.parse_and_bind("tab: complete")
     readline.set_completer_delims("")
     print("cli.py main")
@@ -269,7 +266,6 @@ def grade_problem(name, problem):
 
 if __name__ == "__main__":
     try:
-
         main()
     except:
         print(f"{Style.RESET_ALL}")

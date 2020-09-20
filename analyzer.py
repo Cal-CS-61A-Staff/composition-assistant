@@ -28,9 +28,6 @@ PROBLEM = {
   "hog":hog
 }
 
-
-
-
 class Comment(NamedTuple):
     line_num: int
     comment: str
@@ -69,9 +66,9 @@ TARGETED_CHECKERS: Dict[str, List[Type[Checker]]] = {}
 
 def get_problems(code: str):
     from cli import proj
+    problems = PROBLEM[proj]
     out = {}
-    PROBLEMS = PROBLEM[proj]
-    for name, (start, end) in PROBLEMS.items():
+    for name, (start, end) in problems.items():
         start_index = code.index(start)
         end_index = code.index(end)
         initial_line_number = code[:start_index].count("\n") + 1
@@ -96,7 +93,6 @@ def get_problems(code: str):
 
         out[name] = Problem(func_code, initial_line_number, comments)
     return out
-
 
 
 # @checker
