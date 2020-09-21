@@ -62,19 +62,19 @@ hog_templates = {
                                        "Like so: ```if who == 0:\n\t# player 0 stuff\nelse:\n\t# player 1 stuff```",
         "labeled-names": "Nitpick: Since only one of the if clause or the else clause will be entered on each loop "
                          "iteration, there's no need to label all your names with the player number. ",
-        "score-calls": "Instead of calling `strategy0` (and `strategy1` below) twice, it is "
+        "strategy-calls": "Instead of calling `strategy0` (and `strategy1` below) twice, it is "
                          "better to store the value returned from the function call and use it in both "
                          "places. This avoids redundant and possibly expensive function calls.",
         "who-calls": "`who = other(who)` is used in both the if and the else statement. We can make this code"
                          "more precise by using is just once after both the if and the else statement.",
     },
     "max_scoring_num_rolls": {
-        "call-make-averaged-in-loop": "Since `roll_dice` and `num_samples` do not change in the iteration, the code can "
-                                      "call `make_averaged(roll_dice, num_samples)` outside of the loop and assign it "
+        "call-make-averaged-in-loop": "Since `roll_dice` and `trials_count` do not change in the iteration, the code can "
+                                      "call `make_averaged(roll_dice, trials_count)` outside of the loop and assign it "
                                       "to a name. Whether it is called outside the loop or within, that name is the "
                                       "same. This avoids repeating redundant and possibly expensive function calls.",
         "hardcoded-num-samples": "The number of samples should not be hardcoded as `1000` here. Instead, the name "
-                                 "`num_samples` should be used in case when the function is called a different value is "
+                                 "`trials_count` should be used in case when the function is called a different value is "
                                  "provided.",
     },
 }
