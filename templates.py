@@ -284,9 +284,9 @@ templates["custom"] = None
 #TODO: update **<proj>_templates to match project
 temp = {
   "ants": ants_templates,
-  "cats":cats_templates,
-  "type":typing_test_templates,
-  "hog":hog_templates
+  "cats": cats_templates,
+  "type": typing_test_templates,
+  "hog": hog_templates
 }
 
 templates_by_problem = {"common": templates, **temp[proj]}
