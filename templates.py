@@ -1,7 +1,6 @@
 # fmt: off
 # noinspection PyDictCreation
-import config
-proj = config.proj
+from cli import proj 
 
 templates = {
     "noeffect": "This statement has no effect. You should remove it, since it has no effect on your program.",
@@ -53,25 +52,29 @@ hog_templates = {
     "play": {
         "use-max-function": "Can you use the `max` function to find the correct condition instead of saying "
                             "`score1 < goal` and `score0 < goal`?",
-        "two-turns-per-iteration": "The code should not run two turns in one iteration. Instead `player` should be used in "
+        "two-turns-per-iteration": "The code should not run two turns in one iteration. Instead `who` should be used in "
                                    "an `if` to figure out which segment of code should be run. Then use the `other` "
-                                   "function to update the `player` value.",
+                                   "function to update the `who` value.",
         "hardcoded-100": "100 should not be hard-coded as the winning value for the scores. The code should be using the "
                          "function parameter `goal`.",
-        "multiple-player-comparisons": "The value of `player` can only ever be 0 or 1, therefore instead of two `if`'s "
+        "multiple-who-comparisons": "The value of `who` will only ever be 0 or 1, therefore instead of two `if`'s "
                                        "this code can be an `if...else` clause instead. "
-                                       "Like so: ```if player == 0:\n\t# player 0 stuff\nelse:\n\t# player 1 stuff```",
+                                       "Like so: ```if who == 0:\n\t# player 0 stuff\nelse:\n\t# player 1 stuff```",
         "labeled-names": "Nitpick: Since only one of the if clause or the else clause will be entered on each loop "
                          "iteration, there's no need to label all your names with the player number. ",
-
+        "strategy-calls": "Instead of calling `strategy0` (and `strategy1` below) twice, it is "
+                         "better to store the value returned from the function call and use it in both "
+                         "places. This avoids redundant and possibly expensive function calls.",
+        "who-calls": "`who = other(who)` is used in both the if and the else statement. We can make this code"
+                         "more precise by using is just once after both the if and the else statement.",
     },
     "max_scoring_num_rolls": {
-        "call-make-averaged-in-loop": "Since `roll_dice` and `num_samples` do not change in the iteration, the code can "
-                                      "call `make_averaged(roll_dice, num_samples)` outside of the loop and assign it "
+        "call-make-averaged-in-loop": "Since `roll_dice` and `trials_count` do not change in the iteration, the code can "
+                                      "call `make_averaged(roll_dice, trials_count)` outside of the loop and assign it "
                                       "to a name. Whether it is called outside the loop or within, that name is the "
                                       "same. This avoids repeating redundant and possibly expensive function calls.",
         "hardcoded-num-samples": "The number of samples should not be hardcoded as `1000` here. Instead, the name "
-                                 "`num_samples` should be used in case when the function is called a different value is "
+                                 "`trials_count` should be used in case when the function is called a different value is "
                                  "provided.",
     },
 }
@@ -281,9 +284,9 @@ templates["custom"] = None
 #TODO: update **<proj>_templates to match project
 temp = {
   "ants": ants_templates,
-  "cats":cats_templates,
-  "type":typing_test_templates,
-  "hog":hog_templates
+  "cats": cats_templates,
+  "type": typing_test_templates,
+  "hog": hog_templates
 }
 
 templates_by_problem = {"common": templates, **temp[proj]}

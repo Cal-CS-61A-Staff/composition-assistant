@@ -10,6 +10,13 @@ from pygments import highlight
 from pygments.formatters.terminal import TerminalFormatter
 from pygments.lexers.python import PythonLexer
 
+import argparse
+
+parser = argparse.ArgumentParser(description='Enter project endpoint')
+parser.add_argument("proj", help="Run 'python3 cli.py <proj>', where <proj> is one of the following: hog cats ants scheme")
+args = parser.parse_args()
+proj = args.proj
+
 from analyzer import get_problems, Comment
 from finalizing import grade
 from ok_interface import get_backup_ids, get_backup_code, submit_comment, submit_grade

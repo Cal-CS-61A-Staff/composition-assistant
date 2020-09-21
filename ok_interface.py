@@ -94,3 +94,6 @@ def submit_grade(id, score, message, completed="completed"):
     webbrowser.open(f"https://okpy.org/admin/composition/{id}")
     with open(completed, "a") as f:
         f.write(id + "\n")
+
+from cli import proj 
+proj = proj + ".py"

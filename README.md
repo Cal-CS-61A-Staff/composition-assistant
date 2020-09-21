@@ -4,7 +4,7 @@
 1. Clone the repository: `git clone https://github.com/Cal-CS-61A-Staff/composition-assistant.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Update raw_queue.txt with the submissions you are assigned.
-3. Run the command line interface: `python3 cli.py <proj>` , where `<proj>` is one of the following: hog cats ants scheme
+3. Run the command line interface: `python3 cli.py <proj>` , where `<proj>` is one of the following: `hog` `cats` `ants` `scheme`
 
 ## Video Tutorial
 A video tutorial can be found here: https://drive.google.com/file/d/1SVdlsFNiM5JLQt3EnX7opfdJ77gzldV5/view?usp=sharing
@@ -13,7 +13,7 @@ A video tutorial can be found here: https://drive.google.com/file/d/1SVdlsFNiM5J
 1. Sign in with Okpy account
 2. Follow on screen instructions
 
-Types of comments available to you can be found in template.py
+Types of comments available to you can be found in **template.py**
 
 ## File Description
 - **Pipfile**: Python dependencies file
@@ -27,7 +27,6 @@ Types of comments available to you can be found in template.py
 - **ok_interface.py\***: Interfaces with OK (Pulls submissions and sends comments and grades).
 - **raw_queue.txt**: List of submissions to grade for composition. Copy the HTML source of the OKPy `grading queue` into this file and the submissions will be automatically extracted.
 - **requirements.txt**: Python dependencies file. Used to run pip install.
-- **secrets.py**: OK access token
 - **templates.py\***: List of possible comments.
 
 \* These files need to be modified for each project.
