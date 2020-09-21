@@ -57,7 +57,7 @@ hog_templates = {
                                    "function to update the `who` value.",
         "hardcoded-100": "100 should not be hard-coded as the winning value for the scores. The code should be using the "
                          "function parameter `goal`.",
-        "multiple-who-comparisons": "The value of `who` can only ever be 0 or 1, therefore instead of two `if`'s "
+        "multiple-who-comparisons": "The value of `who` will only ever be 0 or 1, therefore instead of two `if`'s "
                                        "this code can be an `if...else` clause instead. "
                                        "Like so: ```if who == 0:\n\t# who 0 stuff\nelse:\n\t# who 1 stuff```",
         "labeled-names": "Nitpick: Since only one of the if clause or the else clause will be entered on each loop "
