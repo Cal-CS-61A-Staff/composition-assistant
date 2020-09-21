@@ -59,10 +59,14 @@ hog_templates = {
                          "function parameter `goal`.",
         "multiple-who-comparisons": "The value of `who` will only ever be 0 or 1, therefore instead of two `if`'s "
                                        "this code can be an `if...else` clause instead. "
-                                       "Like so: ```if who == 0:\n\t# who 0 stuff\nelse:\n\t# who 1 stuff```",
+                                       "Like so: ```if who == 0:\n\t# player 0 stuff\nelse:\n\t# player 1 stuff```",
         "labeled-names": "Nitpick: Since only one of the if clause or the else clause will be entered on each loop "
-                         "iteration, there's no need to label all your names with the who number. ",
-
+                         "iteration, there's no need to label all your names with the player number. ",
+        "score-calls": "Instead of calling `strategy0` (and `strategy1` below) twice, it is "
+                         "better to store the value returned from the function call and use it in both "
+                         "places. This avoids redundant and possibly expensive function calls.",
+        "who-calls": "`who = other(who)` is used in both the if and the else statement. We can make this code"
+                         "more precise by using is just once after both the if and the else statement.",
     },
     "max_scoring_num_rolls": {
         "call-make-averaged-in-loop": "Since `roll_dice` and `num_samples` do not change in the iteration, the code can "
