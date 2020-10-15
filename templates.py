@@ -65,8 +65,8 @@ hog_templates = {
         "strategy-calls": "Instead of calling `strategy0` (and `strategy1` below) twice, it is "
                          "better to store the value returned from the function call and use it in both "
                          "places. This avoids redundant and possibly expensive function calls.",
-        "who-calls": "`who = other(who)` is used in both the if and the else statement. We can make this code"
-                         "more precise by using is just once after both the if and the else statement.",
+        "who-calls": "`who = other(who)` is used in both the if and the else statement. We can make this code "
+                         "more precise by using it just once after both the if and the else statement.",
     },
     "max_scoring_num_rolls": {
         "call-make-averaged-in-loop": "Since `roll_dice` and `trials_count` do not change in the iteration, the code can "
@@ -121,9 +121,18 @@ cats_templates = {
   "accuracy": {
     "for-loop-with-range": "Could you use a `for` loop with `range` here, instead of a `while` loop? This removes the "
                               "need for an extra index variable ",
+    "great-for": "Great use of a `for` loop here instead of a `while` loop. This removes the need for an extra "
+                              "`index` variable. ",
+    "nested-return": "The last `return` statement should belong inside the `else` clause.",
+                          
     "earlier-length-check": "We should check if `len(typed_words) == 0` before attempting to calculate the score as it "
                               "gives a cleaner flow of logic/makes it obvious that if length is 0, there's no need to "
                               "do any extra work.",
+    "recursion-complex": "Using recursion is one of the ways to solve this problem. However, recursion can "
+                          "sometimes make the logic more complex. For this problem, consider using iteration "
+                          "and combining as much of the logic as possible. For example, we could iterate over "
+                          "the `range(min(len(typed_words), len(reference_words)))` and compare each word from "
+                          "`typed_words` with the respective word from `reference_words`.",
     "if-instead-of-min": "You can use `min`, rather than a series of `if/elif/else` statements, to compute the desired value.",
     "good-min-use": "Nice use of the min function to consolidate code logic of checking lengths into your for loop condition!"
     },
@@ -284,9 +293,9 @@ templates["custom"] = None
 #TODO: update **<proj>_templates to match project
 temp = {
   "ants": ants_templates,
-  "cats":cats_templates,
-  "type":typing_test_templates,
-  "hog":hog_templates
+  "cats": cats_templates,
+  "type": typing_test_templates,
+  "hog": hog_templates
 }
 
 templates_by_problem = {"common": templates, **temp[proj]}

@@ -2,7 +2,6 @@ import ast
 from typing import Dict, List, Generator, Type, NamedTuple
 from stringcase import snakecase
 
-
 hog = {
    "roll_dice": ["def roll_dice", "def free_bacon"],
    "play": ["def play", "#######################"],
@@ -11,7 +10,7 @@ hog = {
 
 cats = {
     "accuracy": ["def accuracy", "def wpm"],
-    "autocorrect": ["def autocorrect", "def sphinx_swap"],
+    "autocorrect": ["def autocorrect", "def shifty_shifts"],
 }
 
 ants = {
@@ -24,8 +23,8 @@ ants = {
 
 PROBLEM = {
   "ants": ants,
-  "cats":cats,
-  "hog":hog
+  "cats": cats,
+  "hog": hog
 }
 
 class Comment(NamedTuple):
