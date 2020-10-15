@@ -19,4 +19,4 @@ def grade(comments):
     else:
         score = 0
 
-    return score, MESSAGES[score]
+    return score, MESSAGES[score] 
