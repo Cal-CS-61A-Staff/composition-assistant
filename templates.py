@@ -150,6 +150,13 @@ cats_templates = {
     "good-zip-use": "Great use of the `zip` function!",
     "good-dict-use": "Great use of a dictionary to utilize it's `.get` method as the `key` for the `min` function!",
   },
+  "fastest_words": {
+    "abstraction-barrier": "Make sure you aren't violating the abstraction barrier. You should use the provided selector "
+                            "functions instead.",
+    "many-loops": "This solution is a bit complex... You shouldn't need more than 3 for loops.",
+    "good-min-key": "Nice use of the min function with a key! This makes the code not only efficient, but easy to read "
+                      "and understand.",
+  },
 }
 
 ants_templates = {
