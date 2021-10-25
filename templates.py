@@ -211,7 +211,7 @@ while place is not hive:
         "check-end-none-not-hive": "Rather than checking if the end of the chain of places has been reached `hive` "
                                    "should have been used, since the abstraction barrier is current being broken with "
                                    "the assumption `hive` will not have anything after it.",
-        "bad-empty-list-check": "Nitpick: Another way of saying {bad-list-check} is simply {good-check}. This is "
+        "bad-empty-list-check": "Nitpick: Another way of saying `{bad-list-check}` is simply `{good-check}`. This is "
                                 "because the empty list is a false-y value so we don't need the additional `!= []`.",
         "bad-recursion": "Great job doing this recursively! Notice that many of the `elif` statements have similar "
                          "return values, and the condition statements are all very similar. Think about how the code "
