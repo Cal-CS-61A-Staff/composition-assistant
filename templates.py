@@ -161,11 +161,13 @@ ants_templates = {
                                 "`LongThrower` thrower, using the regular `ThrowerAnt`'s near_bee function would "
                                 "reduce the amount of code needed significantly. The point of classes is that you can "
                                 "generalize one function to do the tasks of many functions with minimal code changes.",
-        "max-range-attribute": "Nitpick: Notice how we don't have to add max_range as a class attribute because "
+        "max-range-attribute": "Nitpick: Notice how we don't have to add `max_range` as a class attribute because "
                                "it will inherit it from the ThrowerAnt class.",
         "useless-init": "An `__init__` method that simply calls it's base class's `__init__` is unnecessary because "
                         "inheritance will do this automatically without this method in `LongThrower` and "
                         "`ShortThrower`.",
+        "good-no-rewrite-nearest-bee": "Great job! I like how you recognized that you didn't have to rewrite "
+                                       "`nearest_bee` in this class because it inherits from `ThrowerAnt`!",
     },
     "ThrowerAnt": {
         "range-bounds-confusing": "Instead of having to check if `min_range` and `max_range` are not properly defined, "
@@ -176,21 +178,16 @@ ants_templates = {
                                "`float('inf')` (computer representation of infinity) instead.",
         "good-readability": "Great work! Easy to read and intuitive, and I like how this code is general and can be "
                             "reused on any board, and also for subclasses.",
-        "good-no-rewrite-nearest-bee": "Great job! I like how you recognized that you didn't have to rewrite "
-                                       "`nearest_bee` in this class because it inherits from `ThrowerAnt`!",
         "good-range-bounds": "Nice work! Setting min and max to extremes initially helps make the code more general "
                              "because if we ever increased the board size, the `ThrowerAnt` will be able to attack "
                              "bees for the correct number of places away.",
-        "hive-place-name-checking": "The code should not be checking if the name of the place is 'Hive'. The "
-                                    "abstraction barrier is being violated! This is why one of the parameters is "
-                                    "`hive`. This is a pointer to the Hive instance and can be used to check if the "
-                                    "current place is the hive. So `place.name != 'Hive'` should be "
-                                    "`place is not hive`.",
+        "hive-place-name-checking": "The code should not be checking if the name of the place is 'Hive'. The abstraction "
+                                    "barrier is being violated! Instead `place.name != 'Hive'` should be `not place.is_hive`.",
         "no-hive-distance-variable": "A good way of figuring out where our position is relative to the ranges is "
-                                     "keeping a distance variable. Then, `while place is not hive:`, we can change "
+                                     "keeping a distance variable. Then, `while not place.is_hive:`, we can change "
                                      "our current `place` to `place.entrance`, and then increment our distance by "
                                      "1 each time. As long as it's within our `min` and `max ranges`, if `place.bees` "
-                                     "has something in it, we can make a call to `random_or_none`.",
+                                     "has something in it, we can make a call to `random_bee`.",
         "all-ant-range-attributes": "I noticed that you added `min_range` and `max_range` attributes to the `Ant` "
                                     "class instead of the `ThrowerAnt` class! This works, but since these attributes "
                                     "are only meaningful when we talk about `ThrowerAnt`s, it might be better to move "
@@ -206,10 +203,6 @@ while place is not hive:
     # YOUR CODE HERE
 ```
 """,
-        "hive-equality-not-identity": "Notice that we pass a `hive` instance directly to this method so we should use "
-                                      "Python's `is not` here to test identity. The code also works when using `!=` "
-                                      "but since there's only one specific `hive`, checking for identity here makes a "
-                                      "little more sense since the `Place` class doesn't define an equality method.",
         "no-while-loop-place-finder": "A better approach would be to have a `while` loop to get to the proper range of "
                                       "`place`'s (and making sure it doesn't hit the `hive`) and then another `while` "
                                       "loop that goes until it either hits the `hive` or the max range. In the latter "
