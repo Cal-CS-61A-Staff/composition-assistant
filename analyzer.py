@@ -10,7 +10,8 @@ hog = {
 
 cats = {
     "accuracy": ["def accuracy", "def wpm"],
-    "autocorrect": ["def autocorrect", "def sphinx_swap"],
+    "autocorrect": ["def autocorrect", "def shifty_shifts"],
+    "fastest_words": ["def fastest_words(", "def game"]
 }
 
 ants = {
